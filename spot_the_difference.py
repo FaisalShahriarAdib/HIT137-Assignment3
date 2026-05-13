@@ -1,6 +1,5 @@
 """
-HIT137 Assignment 3 - Spot the Difference Game
-A desktop application using OOP, Tkinter GUI, and OpenCV image processing.
+HIT137 Assignment 3 
 """
 
 import tkinter as tk
