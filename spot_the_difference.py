@@ -338,7 +338,7 @@ class SpotTheDifferenceApp(tk.Tk):
         if not path:
             return
         if not self._processor.load_image(path):
-            messagebox.showerror("Error", "Could not load image. Please choose a valid file.")
+            messagebox.showerror("Image Error", "Unable to load image. Please select a valid image file.")
             return
 
         self._state.new_image(ImageProcessor.NUM_DIFFERENCES)
