@@ -106,6 +106,7 @@ class ImageProcessor:
             self._blur_patch,
             self._invert_patch,
             self._noise_patch,
+            self._darken_patch,
         ]
 
         attempts = 0
@@ -176,6 +177,11 @@ class ImageProcessor:
         region = img[y:y+h, x:x+w].astype(np.int16)
         noise = np.random.randint(-40, 40, region.shape, dtype=np.int16)
         img[y:y+h, x:x+w] = np.clip(region + noise, 0, 255).astype(np.uint8)
+        
+    @staticmethod
+    def _darken_patch(img, x, y, w, h):
+        region = img[y:y+h, x:x+w].astype(np.int16)
+        img[y:y+h, x:x+w] = np.clip(region - 35, 0, 255).astype(np.uint8)
 
 
 # ─────────────────────────────────────────────
@@ -229,7 +235,7 @@ class SpotTheDifferenceApp(tk.Tk):
 
     CANVAS_W = 600
     CANVAS_H = 450
-    BG       = "#1a1a2e"
+    BG       = "#0f172a"
     PANEL_BG = "#16213e"
     ACCENT   = "#e94560"
     TEXT_FG  = "#eaeaea"
@@ -238,7 +244,7 @@ class SpotTheDifferenceApp(tk.Tk):
 
     def __init__(self):
         super().__init__()
-        self.title("Spot the Difference  –  HIT137")
+        self.title("Spot The Difference Game - HIT137 Assignment 3")
         self.configure(bg=self.BG)
         self.resizable(False, False)
 
@@ -260,7 +266,7 @@ class SpotTheDifferenceApp(tk.Tk):
         top = tk.Frame(self, bg=self.PANEL_BG, pady=8)
         top.pack(fill=tk.X)
 
-        tk.Label(top, text="🔍 SPOT THE DIFFERENCE", font=("Courier New", 18, "bold"),
+        tk.Label(top, text="🔍 FIND THE 5 DIFFERENCE", font=("Courier New", 18, "bold"),
                  bg=self.PANEL_BG, fg=self.ACCENT).pack(side=tk.LEFT, padx=16)
 
         self._score_var = tk.StringVar(value="Score: 0")
@@ -300,7 +306,7 @@ class SpotTheDifferenceApp(tk.Tk):
                  font=("Courier New", 12), bg=self.PANEL_BG, fg=self.MISS_CLR
                  ).pack(side=tk.LEFT, padx=14)
 
-        self._msg_var = tk.StringVar(value="Load an image to begin.")
+        self._msg_var = tk.StringVar(value="Welcome! Load an image and find the hidden differences.")
         tk.Label(status_frame, textvariable=self._msg_var,
                  font=("Courier New", 11, "italic"), bg=self.PANEL_BG, fg="#aaa"
                  ).pack(side=tk.LEFT, padx=14)
@@ -312,7 +318,7 @@ class SpotTheDifferenceApp(tk.Tk):
         btn_cfg = dict(font=("Courier New", 11, "bold"), relief=tk.FLAT,
                        padx=14, pady=6, cursor="hand2")
 
-        self._load_btn = tk.Button(btn_frame, text="📂  Load Image",
+        self._load_btn = tk.Button(btn_frame, text="📂  Choose Image",
                                    bg=self.ACCENT, fg="white",
                                    command=self._load_image, **btn_cfg)
         self._load_btn.pack(side=tk.LEFT, padx=8)
