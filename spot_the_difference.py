@@ -398,7 +398,7 @@ class SpotTheDifferenceApp(tk.Tk):
             if not self._state.found[i]:
                 self._draw_circle(i, 'blue')
         self._state.locked = True
-        self._msg_var.set("All differences revealed. Load a new image to continue.")
+        self._msg_var.set("All hidden differences have been revealed. Load another image to play again.")
 
     # ── helpers ─────────────────────────────
     def _refresh_canvases(self):
