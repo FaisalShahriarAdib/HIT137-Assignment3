@@ -1,4 +1,5 @@
 # HIT137-Assignment3
+
 ## Features Added
 
 - Loads JPG, PNG, and BMP images.
@@ -30,3 +31,41 @@ pip install opencv-python pillow numpy
 python spot_the_difference.py
 
 3. Click "Choose Image" and select an image file.
+
+## Game Rules
+
+- The player must find 5 hidden differences.
+- Click on the modified image to identify differences.
+- Correct selections are highlighted with red circles.
+- Incorrect clicks increase the mistake counter.
+- The player loses after 3 mistakes.
+- The Reveal All button displays all remaining hidden differences.
+
+## Object-Oriented Programming Features
+
+This project uses object-oriented programming concepts including:
+
+- Classes and objects
+- Encapsulation
+- Class methods
+- Inheritance using Tkinter
+- Separation of game logic and GUI components
+
+## Image Processing Features
+
+OpenCV is used to:
+
+- Resize and scale images
+- Apply blur effects
+- Apply colour shifting
+- Apply brightness adjustments
+- Add random noise
+- Create darkened image regions
+
+## Future Improvements
+
+- Add timer functionality
+- Add difficulty levels
+- Add multiplayer support
+- Add sound effects
+- Add leaderboard system
