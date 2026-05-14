@@ -1,0 +1,37 @@
+# HIT137 Assignment 3 – 
+
+## Project Overview
+This project is a desktop application developed for HIT137 Assignment 3 using Python, Tkinter, and OpenCV.
+## Features
+- Object-oriented Python implementation
+- Image processing using OpenCV
+- GUI built with Tkinter
+- Difference detection system
+- Mistake counter
+- Reveal hidden differences button
+- Multiple image support
+
+## Technologies Used
+- Python
+- Tkinter
+- OpenCV
+- Pillow
+- NumPy
+
+## Installation
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Run Project
+```bash
+python main.py
+```
+
+## Team Members
+- Riad Sarkar Santo
+- Sameer Thapa
+- Faisal Shahriar
+- Kaniz Fatema
