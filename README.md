@@ -1,8 +1,8 @@
 # HIT137-Assignment3  
 Riad Sarkar Santo
-Faisal Shahriar 
+Faisal Shahriar
 Sameer thapa
-Kanizi Fatem
+Kaniz Fatem
 
 ## Features Added
 
