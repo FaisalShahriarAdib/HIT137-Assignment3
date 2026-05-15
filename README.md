@@ -3,10 +3,10 @@
 
 Created by:
 
--Faisal Shahriar s390914
--Sameer Thapa s397773
--Kanij Fatema s394326
--Riad Sarkar Santo s394943
+- Faisal Shahriar s390914
+- Sameer Thapa s397773
+- Kanij Fatema s394326
+- Riad Sarkar Santo s394943
 
 ## Features Added
 
