@@ -1,4 +1,8 @@
-# HIT137-Assignment3
+# HIT137-Assignment3  
+Riad Sarkar Santo
+Faisal Shahriar 
+Sameer thapa
+Kanizi Fatem
 
 ## Features Added
 
